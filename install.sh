@@ -27,4 +27,4 @@ cp ./configurations/rtorrent.rc ~/.rtorrent.rc
 pacman -Sy --noconfirm unrar
 
 # GCC
-pacman -Sy --noconfirm gcc
+pacman -Sy --noconfirm base-devel
