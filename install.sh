@@ -1,10 +1,10 @@
 #!/usr/bin/sh
 
 # Install VIM
-pacman -Sy vim
+pacman -Sy --noconfirm vim
 
 # Install Screen
-pacman -Sy screen
+pacman -Sy --noconfirm screen
 
 # Install NVM
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
@@ -20,11 +20,11 @@ nvm install --lts
 npm i -g yarn
 
 # Install rTorrent
-pacman -Sy rtorrent
+pacman -Sy --noconfirm rtorrent
 cp ./configurations/rtorrent.rc ~/.rtorrent.rc
 
 # RAR
-pacman -Sy unrar
+pacman -Sy --noconfirm unrar
 
 # GCC
-pacman -Sy gcc
+pacman -Sy --noconfirm gcc

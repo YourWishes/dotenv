@@ -1,6 +1,6 @@
 #!/usr/bin/sh
 # Install VSCode
-pacman -Sy vscode
+pacman -Sy --noconfirm vscode
 
 # VLC Media Player
-pacman -Sy vlc
+pacman -Sy --noconfirm vlc
