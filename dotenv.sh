@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Grant SH execute
+chmod +x ./**/*.sh
+
 # Disable running as root.
 if [[ "$EUID" -eq 0 ]]; then
   echo "Please do not run as root"
