@@ -15,3 +15,4 @@ if [ -f "/etc/arch-release" ]; then
 fi
 
 ./scripts/install-node.sh
+source ~/.nvm/nvm.sh
