@@ -5,6 +5,3 @@ sudo pacman -Syuu
 
 # Install
 sudo pacman -S vim code unrar base-devel vlc firefox cmake -q --noconfirm
-
-# Configure GNOME
-./configure-gnome.sh
