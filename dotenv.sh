@@ -22,3 +22,6 @@ fi
 # Node JS
 ./scripts/install-node.sh
 source ~/.nvm/nvm.sh
+
+# VIM
+./scripts/install-vim.sh
