@@ -5,4 +5,6 @@ sudo apt update
 sudo apt upgrade
 
 # Install
-sudo apt install build-essential unrar vim git cmake
+sudo apt install build-essential unrar vim git cmake neovim
+
+echo "alias vim=nvim" >> ~/.bashrc
