@@ -1,7 +1,7 @@
 #!/bin/bash
 cd ./scripts
 
-mkdir -p ~/.config/nvim/init.vim
+mkdir -p ~/.config/nvim
 
 # Install Plugin Manager
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
