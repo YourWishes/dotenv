@@ -1,14 +1,21 @@
-" General
+" Line Numbers
 set number
+
+" Invisibles
 set linebreak
 set showbreak=+++
-set textwidth=80
+set list
+:set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:¶,precedes:«,extends:»
+
+" Search
 set showmatch
 set visualbell
 set hlsearch
 set smartcase
 set ignorecase
 set incsearch
+
+" Tabs
 set autoindent
 set shiftwidth=2
 set smartindent
@@ -17,7 +24,9 @@ set softtabstop=2
 set et
 %retab!
 
+" Ruler
 set ruler
+set textwidth=80
 set undolevels=1000
 set backspace=indent,eol,start
 
