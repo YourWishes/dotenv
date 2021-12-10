@@ -5,7 +5,7 @@ set number
 set linebreak
 set showbreak=+++
 set list
-:set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:¶,precedes:«,extends:»
+set listchars=tab:→\ ,space:·,nbsp:␣,precedes:«,extends:»,trail:·
 
 " Search
 set showmatch
@@ -29,6 +29,7 @@ set ruler
 set textwidth=80
 set undolevels=1000
 set backspace=indent,eol,start
+set colorcolumn=80
 
 " Colors
 syntax enable
