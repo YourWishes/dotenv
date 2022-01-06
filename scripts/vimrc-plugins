@@ -2,9 +2,6 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-sensible'
 Plug 'blackbirdtheme/vim'
-"Plug 'sheerun/vim-polyglot'
-"Plug 'epmor/hotline-vim'
-
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 
 call plug#end()
