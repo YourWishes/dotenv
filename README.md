@@ -6,5 +6,6 @@
 - Check KDE settings in general, see if I can automate the set up
 
 ```
+sudo apt install --assume-yes git
 git clone https://github.com/YourWishes/dotenv && cd dotenv && chmod +x ./dotenv.sh && ./dotenv.sh
 ```

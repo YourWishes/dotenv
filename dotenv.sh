@@ -30,3 +30,8 @@ source ~/.nvm/nvm.sh
 
 # VIM
 ./scripts/install-vim.sh
+
+# Plasma Desktop
+if [[ "$XDG_CURRENT_DESKTOP" -eq "KDE" ]]; then
+  ./scripts/install-plasma.sh
+fi
