@@ -6,6 +6,7 @@ set linebreak
 set showbreak=+++
 set list
 set listchars=tab:→\ ,space:·,nbsp:␣,precedes:«,extends:»,trail:·
+set nowrap
 
 " Search
 set showmatch
@@ -49,3 +50,6 @@ autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_
 
 " Hide line numbers within term tabs.
 autocmd TermOpen * setlocal nonumber norelativenumber
+
+" Press CTRL+B to toggle NerdTree
+map <silent> <C-b> :NERDTreeToggle<CR>
