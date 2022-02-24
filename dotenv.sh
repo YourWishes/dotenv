@@ -33,5 +33,6 @@ source ~/.nvm/nvm.sh
 
 # Plasma Desktop
 if [[ "$XDG_CURRENT_DESKTOP" -eq "KDE" ]]; then
-  ./scripts/install-plasma.sh
+  echo "Plasma desktop crap disabled"
+  #./scripts/install-plasma.sh
 fi
