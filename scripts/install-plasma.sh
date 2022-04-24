@@ -4,7 +4,7 @@
 mkdir -p ~/Applications
 
 # Prep snap
-sudo ln -s /var/lib/snapd/snap /snap
+#sudo ln -s /var/lib/snapd/snap /snap
 
 toInstall=(
   firefox
