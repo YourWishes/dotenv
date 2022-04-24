@@ -27,6 +27,7 @@ toInstall=(
   tiled
   libreoffice-fresh
   xorg-xcursorgen
+  plasma-wayland-session
 )
 
 # Arch Linux Setup
@@ -130,3 +131,29 @@ for (i=0;i<Desktops.length;i++) {
                                     \"General\");
         d.writeConfig(\"Image\", \"file://$(realpath ~)/Pictures/wallpaper.png\");
 }"
+
+
+
+# TODO:
+# Change the blinking animation on opening apps
+# Splash Screen
+# Screen Edges for desktop
+# Touch Screen Gestures*
+# Lock Screen settings
+# Virtual Desktops
+# Task Switcher (Alt Tab)
+# Disable
+# SDDM
+# Autostart
+# Dont restore saved session
+# Do not disturb mode
+# User Icon and email
+# Date and time settings, localization settings
+# Disable KDE Wallet
+# Online accounts (gmail)
+# Night Color
+# Power save settings
+# Printers?
+# Application Launcher
+# Change tray icons
+# Change clock display
