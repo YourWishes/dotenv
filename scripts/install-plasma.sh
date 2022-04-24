@@ -26,6 +26,7 @@ toInstall=(
   blender
   tiled
   libreoffice-fresh
+  xorg-xcursorgen
 )
 
 # Arch Linux Setup
@@ -108,9 +109,11 @@ wget -qO- https://git.io/papirus-icon-theme-install | DESTDIR="$HOME/.local/shar
 /usr/lib/plasma-changeicons Papirus-Dark
 
 # simp1e cursors
-# git clone --recurse-submodules https://gitlab.com/zoli111/simp1e.git
-# cd simp1e
-# find . -type f -name "*.sh" -exec sed -i 's/\r//' {} \;
-# chmod +x ./generate_svgs.sh
-# ./generate_svgs.sh
-# ./build_cursors.sh
+git clone --recurse-submodules https://gitlab.com/zoli111/simp1e.git
+cd simp1e
+find . -type f -name "*.sh" -exec sed -i 's/\r//' {} \;
+chmod +x ./generate_svgs.sh
+./generate_svgs.sh
+./build_cursors.sh
+cp -r ./built_themes/* ~/.local/share/icons/
+kwriteconfig5 --file ~/.config/kcminputrc --group Mouse --key cursorTheme "Simp1e-"
