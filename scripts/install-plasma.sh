@@ -117,3 +117,16 @@ chmod +x ./generate_svgs.sh
 ./build_cursors.sh
 cp -r ./built_themes/* ~/.local/share/icons/
 kwriteconfig5 --file ~/.config/kcminputrc --group Mouse --key cursorTheme "Simp1e-"
+
+# Wallpaper
+wget https://c138.pcloud.com/dHZ31M01DZo01UIKZZZHQX4r7Z2ZZmNzZkZAwYNXZCUrpaQWBJ9YU5IC91RHV78eLjN07/wallpaper2.png -O ~/Pictures/wallpaper.png
+dbus-send --session --dest=org.kde.plasmashell --type=method_call /PlasmaShell org.kde.PlasmaShell.evaluateScript "string:
+var Desktops = desktops();                                                                                                                       
+for (i=0;i<Desktops.length;i++) {
+        d = Desktops[i];
+        d.wallpaperPlugin = \"org.kde.image\";
+        d.currentConfigGroup = Array(\"Wallpaper\",
+                                    \"org.kde.image\",
+                                    \"General\");
+        d.writeConfig(\"Image\", \"file://$(realpath ~)/Pictures/wallpaper.png\");
+}"
