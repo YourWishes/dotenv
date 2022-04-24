@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Update
-sudo pacman -Syuu
+sudo pacman -Syuu -q --noconfirm
 
 # Install
-sudo pacman -S vim code unrar base-devel vlc firefox cmake -q --noconfirm
+sudo pacman -S -q --noconfirm base-devel unrar git cmake curl wget flatpak neovim vim

@@ -11,3 +11,6 @@ vim +"PlugInstall --sync" +qa
 
 # Setup Configuration
 cat ./vimrc-config >> ~/.config/nvim/init.vim
+
+# Alias NEOVIM
+echo "alias vim='nvim'" >> ~/.bashrc

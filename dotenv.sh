@@ -24,15 +24,23 @@ if [ -f "/etc/debian_version" ]; then
   ./scripts/install-debian.sh
 fi
 
-# Node JS
+# Update flatpak
+flatpak update --assumeyes
+
+# Node JS / NVM
 ./scripts/install-node.sh
 source ~/.nvm/nvm.sh
+
+# Ruby / RVM
+./scripts/install-rvm.sh
+source ~/.rvm/scripts/rvm
 
 # VIM
 ./scripts/install-vim.sh
 
 # Plasma Desktop
-if [[ "$XDG_CURRENT_DESKTOP" -eq "KDE" ]]; then
-  echo "Plasma desktop crap disabled"
-  #./scripts/install-plasma.sh
+if [[ "$DESKTOP_SESSION" -eq "plasma" ]]; then
+  ./scripts/install-plasma.sh
 fi
+
+# Iosevka

@@ -1,2 +1,7 @@
 .git
 backups
+moe*
+moe/*
+visual-studio*
+wget-log
+iosevka*
