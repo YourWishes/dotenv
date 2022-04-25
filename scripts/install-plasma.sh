@@ -28,6 +28,7 @@ toInstall=(
   libreoffice-fresh
   xorg-xcursorgen
   plasma-wayland-session
+  zip
 )
 
 # Arch Linux Setup
@@ -132,6 +133,11 @@ for (i=0;i<Desktops.length;i++) {
         d.writeConfig(\"Image\", \"file://$(realpath ~)/Pictures/wallpaper.png\");
 }"
 
+# Kickstart / Start Menu, installed but not configured
+git clone https://gitlab.com/nwwdles/plasma-kickoff-grid.git
+cd plasma-kickoff-grid
+zip -r "plasma-kickoff-grid.plasmoid" package
+kpackagetool5 --install "plasma-kickoff-grid.plasmoid"
 
 
 # TODO:
