@@ -86,26 +86,11 @@ then
   rm ~/Downloads/pia.run
 fi
 
-# Moe Theme
-wget https://gitlab.com/jomada/moe-theme/-/archive/master/moe-theme-master.tar.gz -O moe.tar.gz
-tar -xzvf ./moe.tar.gz
-
-# Dark
-mkdir -p ~/.local/share/color-schemes/MoeDark.colors
-cp -r ./moe-theme-master/MoeDark-Global/* ~/.local/share/plasma/look-and-feel/
-cp -r ./moe-theme-master/MoeDark ~/.local/share/plasma/desktoptheme/MoeDark
-cp -r ./moe-theme-master/MoeDark-aurorae/* ~/.local/share/aurorae/themes/
-cp ./moe-theme-master/Moe-Dark-color-schemes/MoeDark.colors ~/.local/share/color-schemes/MoeDark.colors
-
-# Light
-mkdir -p ~/.local/share/color-schemes/Moe.colors
-cp -r ./moe-theme-master/Moe-Global/* ~/.local/share/plasma/look-and-feel/
-cp -r ./moe-theme-master/Moe ~/.local/share/plasma/desktoptheme/Moe
-cp -r ./moe-theme-master/aurorae/* ~/.local/share/aurorae/themes/
-cp ./moe-theme-master/color-schemes/Moe.colors ~/.local/share/color-schemes/Moe.colors
-
-# Switch theme
-lookandfeeltool -a Moe-Dark
+# Qogir theme
+git clone https://github.com/vinceliuice/Qogir-kde
+cd Qogir-kde
+./install.sh
+cd ..
 
 # Iosevka Font
 mkdir -p ~/.fonts
@@ -132,17 +117,6 @@ cp -r ./built_themes/* ~/.local/share/icons/
 kwriteconfig5 --file ~/.config/kcminputrc --group Mouse --key cursorTheme "Simp1e-"
 
 # Wallpaper
-wget https://c138.pcloud.com/dHZ31M01DZo01UIKZZZHQX4r7Z2ZZmNzZkZAwYNXZCUrpaQWBJ9YU5IC91RHV78eLjN07/wallpaper2.png -O ~/Pictures/wallpaper.png
-dbus-send --session --dest=org.kde.plasmashell --type=method_call /PlasmaShell org.kde.PlasmaShell.evaluateScript "string:
-var Desktops = desktops();                                                                                                                       
-for (i=0;i<Desktops.length;i++) {
-        d = Desktops[i];
-        d.wallpaperPlugin = \"org.kde.image\";
-        d.currentConfigGroup = Array(\"Wallpaper\",
-                                    \"org.kde.image\",
-                                    \"General\");
-        d.writeConfig(\"Image\", \"file://$(realpath ~)/Pictures/wallpaper.png\");
-}"
 
 # Kickstart / Start Menu, installed but not configured
 if [ ! -d "plasma-kickoff-grid" ] ; then
@@ -151,7 +125,6 @@ fi
 cd plasma-kickoff-grid
 zip -r "plasma-kickoff-grid.plasmoid" package
 kpackagetool5 --install "plasma-kickoff-grid.plasmoid"
-
 
 # TODO:
 # Change the blinking animation on opening apps
