@@ -47,7 +47,7 @@ if [ -f "/etc/debian_version" ]; then
   sudo apt install --assume-yes $toInstall
 
   # VS Code (Debian)
-  wget https://az764295.vo.msecnd.net/stable/899d46d82c4c95423fb7e10e68eba52050e30ba3/code_1.63.2-1639562499_amd64.deb -O ~/Downloads/vscode.deb
+  wget https://az764295.vo.msecnd.net/stable/da15b6fd3ef856477bf6f4fb29ba1b7af717770d/code_1.67.1-1651841865_amd64.deb -O ~/Downloads/vscode.deb
   sudo dpkg -i ~/Downloads/vscode.deb
   rm ~/Downloads/vscode.deb
 fi
@@ -91,6 +91,9 @@ git clone https://github.com/vinceliuice/Qogir-kde
 cd Qogir-kde
 ./install.sh
 cd ..
+
+# Delete Qogir ugly icons (Sorry Qogir)
+rm -rf ~/.local/share/plasma/desktoptheme/Qogir*/icons
 
 # Iosevka Font
 mkdir -p ~/.fonts
