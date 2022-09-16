@@ -89,20 +89,20 @@ then
 fi
 
 # Qogir theme
-git clone https://github.com/vinceliuice/Qogir-kde
-cd Qogir-kde
-./install.sh
-cd ..
+#git clone https://github.com/vinceliuice/Qogir-kde
+#cd Qogir-kde
+#./install.sh
+#cd ..
 
 # Delete Qogir ugly icons (Sorry Qogir)
-rm -rf ~/.local/share/plasma/desktoptheme/Qogir*/icons
+#rm -rf ~/.local/share/plasma/desktoptheme/Qogir*/icons
 
 # Iosevka Font
-mkdir -p ~/.fonts
-wget "https://objects.githubusercontent.com/github-production-release-asset-2e65be/39315600/97e975fb-b154-4b05-bd0a-3c818fdb02f9?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20220424%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220424T063917Z&X-Amz-Expires=300&X-Amz-Signature=4edc659fe314a1f8b8964063152d98f2ce1e1c971619d87c08996443ce65cf68&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=39315600&response-content-disposition=attachment%3B%20filename%3Dsuper-ttc-iosevka-ss09-15.2.0.zip&response-content-type=application%2Foctet-stream" -O ./iosevka-ss09.zip
-bsdtar xvf ./iosevka-ss09.zip
-mkdir -p ~/.fonts
-cp -r ./*.ttc ~/.fonts/
+#mkdir -p ~/.fonts
+#wget "https://objects.githubusercontent.com/github-production-release-asset-2e65be/39315600/97e975fb-b154-4b05-bd0a-3c818fdb02f9?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20220424%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220424T063917Z&X-Amz-Expires=300&X-Amz-Signature=4edc659fe314a1f8b8964063152d98f2ce1e1c971619d87c08996443ce65cf68&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=39315600&response-content-disposition=attachment%3B%20filename%3Dsuper-ttc-iosevka-ss09-15.2.0.zip&response-content-type=application%2Foctet-stream" -O ./iosevka-ss09.zip
+#bsdtar xvf ./iosevka-ss09.zip
+#mkdir -p ~/.fonts
+#cp -r ./*.ttc ~/.fonts/
 
 # Papirus Icons
 mkdir -p ~/.local/share/icons
