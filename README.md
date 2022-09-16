@@ -12,6 +12,8 @@
   - Fix the taskbar icons
   - Fix the taskbar quick access
   - Update the theme, icons, window settings, etc.
+- Retroarch
+  - Configure retroarch in its entirety.
 - Win600
   - Fix controller and shortcuts
 
