@@ -24,10 +24,13 @@ toInstall="\
   handbrake \
   audacity \
   blender \
+  maliit-framework \
+  maliit-keyboard \
   tiled \
   libreoffice-fresh \
   xorg-xcursorgen \
   plasma-wayland-session \
+  steam \
   zip
 "
 
@@ -55,13 +58,12 @@ fi
 # Install programs using flatpak
 flatpak install flathub \
     com.bitwarden.desktop \
-    com.obsproject.Studio \
+    com.obsproject.Studio \ 
     com.discordapp.Discord \
     com.usebottles.bottles \
     org.libretro.RetroArch \
     org.gnome.NetworkDisplays \
     org.gnome.gitlab.YaLTeR.VideoTrimmer \
-    net.ankiweb.Anki \
     com.orama_interactive.Pixelorama \
     com.parsecgaming.parsec \
     com.github.tenderowl.frog \
