@@ -6,41 +6,121 @@ if [[ "$EUID" -eq 0 ]]; then
   exit 1
 fi
 
-# Grant SH execute
-chmod +x ./**/*.sh
 
-# Setup SSH key
-mkdir -p ~/.ssh
-echo "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAhF9DPXFN207BJrScSdWCMP+S5iOHKa/9KRBSMx4iqcc3YgGJttgMdTqrlJwTKDZgxmzc9LSBGJlkY5fQaYRyH4kRTaBs6oyYbEeo9b85NF8NZ1cpeMA3qORRIkWlDeSYIBhPmwORqPJjXDIEp04eza/ujZmOLGO412h4+Z6RLjUq7gdQEB9o9v9hz/9rV+0IRhie4PumffWZ94ZyAixrgsUGJqDyfLo+mTSEgXOYAJgvqfZ5+q3tke2MraGVmjZhinBfUZp608VqA56bG6KRvJX1uz8TGuReG4UCiWQX/waTxJRc80FySjnR7+1uzB7OwGWtiN0B6/lOd2Gt8QufKQ== rsa-key-20190523" >> ~/.ssh/authorized_keys
-chmod 0700 ~/.ssh/authorized_keys
+# Update, run twice incase of keychain updates
+sudo pacman -Syuu -q --noconfirm
+sudo pacman -Syuu -q --noconfirm
 
-# Arch Linux Setup
-if [ -f "/etc/arch-release" ]; then
-  ./scripts/install-arch.sh
-fi
-
-# Debian set up
-if [ -f "/etc/debian_version" ]; then
-  ./scripts/install-debian.sh
-fi
-
-# Update flatpak
+flatpak update --assumeyes
 flatpak update --assumeyes
 
-# Node JS / NVM
-./scripts/install-node.sh
-source ~/.nvm/nvm.sh
 
-# Ruby / RVM
-./scripts/install-rvm.sh
-source ~/.rvm/scripts/rvm
+# Install the tools I like to use in the CLI
+sudo pacman -S -q --noconfirm \
+  base-devel \
+  unrar \
+  git \
+  cmake \
+  curl \
+  wget \
+  flatpak \
+  neovim \
+  vim
 
-# VIM
-./scripts/install-vim.sh
 
-# Plasma Desktop
-if [[ "$DESKTOP_SESSION" -eq "plasma" ]]; then
-  ./scripts/install-plasma.sh
+# Install over pacman programs I use
+mkdir -p ~/Applications
+
+
+sudo pacman -S -q --noconfirm
+  firefox \
+  gparted \
+  solaar \
+  qbittorrent \
+  vlc \
+  pinta \
+  cheese \
+  #meld \
+  filezilla \
+  inkscape \
+  gnome-chess \
+  gnome-mines \
+  gnome-sudoku \
+  aisleriot \
+  handbrake \
+  audacity \
+  blender \
+  #maliit-framework \
+  #maliit-keyboard \
+  tiled \
+  libreoffice-fresh \
+  #xorg-xcursorgen \
+  plasma-wayland-session \
+  steam \
+  zip \
+  ttc-iosevka
+
+
+# Install programs using flatpak
+flatpak install flathub \
+    com.bitwarden.desktop \
+    com.obsproject.Studio \ 
+    com.discordapp.Discord \
+    com.usebottles.bottles \
+    org.libretro.RetroArch \
+    org.gnome.NetworkDisplays \
+    org.gnome.gitlab.YaLTeR.VideoTrimmer \
+    com.orama_interactive.Pixelorama \
+    #com.parsecgaming.parsec \
+    #com.github.tenderowl.frog \
+    com.uploadedlobster.peek \
+    --assumeyes
+
+
+# VS Code (AUR)
+git clone https://aur.archlinux.org/visual-studio-code-bin
+cd visual-studio-code-bin
+makepkg -si --noconfirm
+cd ..
+
+
+# pCloud
+if [ ! -f "~/Applications/pcloud" ]; then
+  wget https://p-def8.pcloud.com/cBZu1eKrMZMqwjTqZZZh9ILr7Z2ZZmNzZkZPF7pVZrHZrzZBpZpRZc5Z6pZopZ9pZApZGFZUJZkJZPpZkzZWTVkVZQDtD9nHvjKu7c1tTLeXYVj05EfNk/pcloud -O ~/Applications/pcloud
+  chmod +x ~/Applications/pcloud
+  ~/Applications/pcloud &
 fi
 
-# Iosevka
+
+# PIA
+if ! command -v piactl &> /dev/null
+then
+  wget https://installers.privateinternetaccess.com/download/pia-linux-3.3.1-06924.run -O ~/Downloads/pia.run
+  chmod +x ~/Downloads/pia.run
+  mkdir -p ~/.config/privateinternetaccess
+  cp ./scripts/pia-settings.json ~/.config/privateinternetaccess/clientsettings.json
+  ~/Downloads/pia.run
+  rm ~/Downloads/pia.run
+fi
+
+
+# Node JS / NVM
+if ! command -v nvm &> /dev/null
+then
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+  NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+fi
+
+nvm install --lts
+npm i -g yarn
+
+
+# VIM
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+cp ./configs/vimrc-plugins ~/.config/nvim/init.vim
+vim +"PlugInstall --sync" +qa
+
+cat ./configs/vimrc-config >> ~/.config/nvim/init.vim
+echo "alias vim='nvim'" >> ~/.bashrc
