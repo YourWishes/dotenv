@@ -15,6 +15,10 @@ sudo pacman -Syuu -q --noconfirm
 flatpak update --assumeyes
 flatpak update --assumeyes
 
+# Create directories I use.
+echo -e "\n\n\nCreating directories\n\n\n"
+mkdir -p ~/Applications
+mkdir -p ~/htdocs
 
 # Install the tools I like to use in the CLI
 echo -e "\n\n\nInstalling CLI Tools\n\n\n"
@@ -29,10 +33,7 @@ sudo pacman -S -q --noconfirm \
   neovim \
   vim
 
-
-# Install over pacman programs I use
-mkdir -p ~/Applications
-
+# Desktop Programs
 echo -e "\n\n\nInstalling Pacman Desktop Programs\n\n\n"
 sudo pacman -S -q --noconfirm \
   firefox \
@@ -104,7 +105,7 @@ then
   wget https://installers.privateinternetaccess.com/download/pia-linux-3.3.1-06924.run -O ~/Downloads/pia.run
   chmod +x ~/Downloads/pia.run
   mkdir -p ~/.config/privateinternetaccess
-  cp ./scripts/pia-settings.json ~/.config/privateinternetaccess/clientsettings.json
+  cp ./configs/pia-settings.json ~/.config/privateinternetaccess/clientsettings.json
   ~/Downloads/pia.run
   rm ~/Downloads/pia.run
 fi
@@ -126,9 +127,9 @@ npm i -g yarn
 
 # VIM
 echo -e "\n\n\nVIM\n\n\n"
+echo "alias vim='nvim'" >> ~/.bashrc
+
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 cp ./configs/vimrc-plugins ~/.config/nvim/init.vim
-vim +"PlugInstall --sync" +qa
-
+nvim +"PlugInstall --sync" +qa
 cat ./configs/vimrc-config >> ~/.config/nvim/init.vim
-echo "alias vim='nvim'" >> ~/.bashrc
