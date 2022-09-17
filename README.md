@@ -18,6 +18,5 @@
   - Fix controller and shortcuts
 
 ```
-sudo apt install --assume-yes git
 git clone https://github.com/YourWishes/dotenv && cd dotenv && chmod +x ./dotenv.sh && ./dotenv.sh
 ```
