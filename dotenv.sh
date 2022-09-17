@@ -19,6 +19,7 @@ flatpak update --assumeyes
 echo -e "\n\n\nCreating directories\n\n\n"
 mkdir -p ~/Applications
 mkdir -p ~/htdocs
+mkdir -p ~/.config/nvim
 
 # Install the tools I like to use in the CLI
 echo -e "\n\n\nInstalling CLI Tools\n\n\n"
