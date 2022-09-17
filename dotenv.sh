@@ -134,3 +134,10 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 cp ./configs/vimrc-plugins ~/.config/nvim/init.vim
 nvim +"PlugInstall --sync" +qa
 cat ./configs/vimrc-config >> ~/.config/nvim/init.vim
+
+# Begin Plasma Configurations
+
+# Disable the workspaces
+qdbus org.kde.KWin /VirtualDesktopManager org.kde.KWin.VirtualDesktopManager.rows 1
+qdbus org.kde.KWin /VirtualDesktopManager org.kde.KWin.VirtualDesktopManager.removeDesktop $(qdbus org.kde.KWin /VirtualDesktopManager org.kde.KWin.VirtualDesktopManager.current)
+
