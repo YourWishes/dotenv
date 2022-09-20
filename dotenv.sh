@@ -44,7 +44,6 @@ sudo pacman -S -q --noconfirm \
   vlc \
   pinta \
   cheese \
-  #meld \
   filezilla \
   inkscape \
   gnome-chess \
@@ -54,11 +53,8 @@ sudo pacman -S -q --noconfirm \
   handbrake \
   audacity \
   blender \
-  #maliit-framework \
-  #maliit-keyboard \
   tiled \
   libreoffice-fresh \
-  #xorg-xcursorgen \
   plasma-wayland-session \
   steam \
   zip \
@@ -69,15 +65,13 @@ sudo pacman -S -q --noconfirm \
 echo -e "\n\n\nInstalling FlatPak Desktop Programs\n\n\n"
 flatpak install flathub \
     com.bitwarden.desktop \
-    com.obsproject.Studio \ 
+    com.obsproject.Studio \
     com.discordapp.Discord \
     com.usebottles.bottles \
     org.libretro.RetroArch \
     org.gnome.NetworkDisplays \
     org.gnome.gitlab.YaLTeR.VideoTrimmer \
     com.orama_interactive.Pixelorama \
-    #com.parsecgaming.parsec \
-    #com.github.tenderowl.frog \
     com.uploadedlobster.peek \
     --assumeyes
 
