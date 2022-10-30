@@ -58,7 +58,10 @@ sudo pacman -S -q --noconfirm \
   plasma-wayland-session \
   steam \
   zip \
-  ttc-iosevka
+  ttc-iosevka \
+  bluedevil \
+  noto-fonts \
+  noto-fonts-cjk
 
 
 # Install programs using flatpak
@@ -73,6 +76,7 @@ flatpak install flathub \
     org.gnome.gitlab.YaLTeR.VideoTrimmer \
     com.orama_interactive.Pixelorama \
     com.uploadedlobster.peek \
+    #com.valvesoftware.steam \
     --assumeyes
 
 
@@ -82,15 +86,6 @@ git clone https://aur.archlinux.org/visual-studio-code-bin
 cd visual-studio-code-bin
 makepkg -si --noconfirm
 cd ..
-
-
-# pCloud
-echo -e "\n\n\nInstalling pCloud\n\n\n"
-if [ ! -f "~/Applications/pcloud" ]; then
-  wget https://p-def8.pcloud.com/cBZu1eKrMZMqwjTqZZZh9ILr7Z2ZZmNzZkZPF7pVZrHZrzZBpZpRZc5Z6pZopZ9pZApZGFZUJZkJZPpZkzZWTVkVZQDtD9nHvjKu7c1tTLeXYVj05EfNk/pcloud -O ~/Applications/pcloud
-  chmod +x ~/Applications/pcloud
-  ~/Applications/pcloud &
-fi
 
 
 # PIA
@@ -130,3 +125,29 @@ nvim +"PlugInstall --sync" +qa
 cat ./configs/vimrc-config >> ~/.config/nvim/init.vim
 
 # Begin Plasma Configurations
+systemctl enable bluetooth
+systemctl start bluetooth
+
+# Qogir
+git clone https://github.com/vinceliuice/Qogir-kde
+cd Qogir-kde
+chmod +x ./install.sh
+./install.sh
+cd ..
+
+# Simp1e Cursors
+git clone --recurse-submodules https://gitlab.com/zoli111/simp1e.git
+cd simp1e
+
+sudo pacman -S -q --noconfirm \
+  librsvg \
+  python-pillow \
+  xorg-xcursorgen
+
+./build.sh
+mv ./built_themes/* ~/.icons
+cd ..
+
+# Git Config
+git config --global user.name Dominic Masters
+git config --global user.email dominic@domsplace.com

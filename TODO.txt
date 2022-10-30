@@ -1,2 +1,32 @@
-2 - Hide the Manjaro Hello (and disable launch at start?)
-3 - Install Oracle Guest additions? May not be required for some archs
+
+# TODO: Set cursor
+# TODO: Set Theme
+# pCloud
+# Don't do VSCode as an AUR
+# KTorrent or alternative
+# Configure Google cloud
+# Parsec alternative
+Better Calculator
+Way to deal with Kernel updates
+KDE Connect?
+Yuzu / Cemu / Citra(?) / RCPS3
+SSH(?)
+Emoji Picker?
+TODO: Set window switcher to "Thumbnail Grid"
+TODO: Organize Application Icons
+TODO: Adjust power settings
+TODO: Make Steam and pCloud launch with system start
+TODO: Adjust what icons appear in the taskbar area (Both Near clock and in the launcher)
+Some kind if post-pcloud script?
+See if I can fix KDE Wallet (just remove the password)
+Start in Wayland
+Fix SAMBA access to NAS
+Wallpaper
+
+Applications I'd like to have
+Virtual Keyboard, with controller support
+VLC
+Elisa
+!FreeTube
+!OpenRGB
+Balena Etcher
