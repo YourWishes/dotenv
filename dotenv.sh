@@ -63,8 +63,11 @@ sudo pacman -S -q --noconfirm \
   bluedevil \
   noto-fonts \
   noto-fonts-cjk \
+  noto-fonts-emoji \
   avahi \
-  nss-mdns
+  nss-mdns \
+  elisa \
+  kcalc
 
 
 # Install programs using flatpak
@@ -73,12 +76,14 @@ flatpak install flathub \
     com.bitwarden.desktop \
     com.obsproject.Studio \
     com.discordapp.Discord \
-    com.usebottles.bottles \
     org.libretro.RetroArch \
     org.gnome.NetworkDisplays \
     org.gnome.gitlab.YaLTeR.VideoTrimmer \
     com.orama_interactive.Pixelorama \
     com.uploadedlobster.peek \
+    org.kde.weather \
+    org.mozilla.Thunderbird \
+    com.ulduzsoft.Birdtray \
     --assumeyes
 
 
