@@ -1,11 +1,13 @@
 
-# TODO: Set cursor
-# TODO: Set Theme
-# pCloud
-# Don't do VSCode as an AUR
-# KTorrent or alternative
-# Configure Google cloud
-# Parsec alternative
+TODO: Set cursor
+TODO: Set Theme
+pCloud
+Don't do VSCode as an AUR
+CTRL+F4 Default Shortcut
+Default NumLock On
+Install G14 Tools
+Configure Google cloud
+Parsec alternative
 Better Calculator
 Way to deal with Kernel updates
 KDE Connect?
@@ -20,7 +22,6 @@ TODO: Adjust what icons appear in the taskbar area (Both Near clock and in the l
 Some kind if post-pcloud script?
 See if I can fix KDE Wallet (just remove the password)
 Start in Wayland
-Fix SAMBA access to NAS
 Wallpaper
 
 Applications I'd like to have

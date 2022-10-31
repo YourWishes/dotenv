@@ -32,7 +32,8 @@ sudo pacman -S -q --noconfirm \
   wget \
   flatpak \
   neovim \
-  vim
+  vim \
+  fuse
 
 # Desktop Programs
 echo -e "\n\n\nInstalling Pacman Desktop Programs\n\n\n"
@@ -61,7 +62,9 @@ sudo pacman -S -q --noconfirm \
   ttc-iosevka \
   bluedevil \
   noto-fonts \
-  noto-fonts-cjk
+  noto-fonts-cjk \
+  avahi \
+  nss-mdns
 
 
 # Install programs using flatpak
@@ -76,7 +79,6 @@ flatpak install flathub \
     org.gnome.gitlab.YaLTeR.VideoTrimmer \
     com.orama_interactive.Pixelorama \
     com.uploadedlobster.peek \
-    #com.valvesoftware.steam \
     --assumeyes
 
 
@@ -135,6 +137,9 @@ chmod +x ./install.sh
 ./install.sh
 cd ..
 
+# Fix Dark Mode
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+
 # Simp1e Cursors
 git clone --recurse-submodules https://gitlab.com/zoli111/simp1e.git
 cd simp1e
@@ -145,9 +150,16 @@ sudo pacman -S -q --noconfirm \
   xorg-xcursorgen
 
 ./build.sh
+mkdir ~/.icons
 mv ./built_themes/* ~/.icons
 cd ..
 
 # Git Config
 git config --global user.name Dominic Masters
 git config --global user.email dominic@domsplace.com
+
+# Get .local DNS hostnames to work
+sudo sed -i 's/hosts\: mymachines resolve/hosts: mymachines resolve mdns_minimal/g' /etc/nsswitch.conf
+sudo systemctl stop avahi-daemon
+sudo systemctl start avahi-daemon
+sudo systemctl enable avahi-daemon
