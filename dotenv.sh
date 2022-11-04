@@ -67,7 +67,13 @@ sudo pacman -S -q --noconfirm \
   avahi \
   nss-mdns \
   elisa \
-  kcalc
+  kcalc \
+  kdeconnect \
+  spectacle \
+  shotgun \
+  xclip \
+  cups \
+  print-manager
 
 
 # Install programs using flatpak
@@ -168,3 +174,8 @@ sudo sed -i 's/hosts\: mymachines resolve/hosts: mymachines resolve mdns_minimal
 sudo systemctl stop avahi-daemon
 sudo systemctl start avahi-daemon
 sudo systemctl enable avahi-daemon
+
+# Microsoft TTF fonts
+
+# Setup screenshot hotkeys
+# shotgun - | xclip -t 'image/png' -selection clipboard

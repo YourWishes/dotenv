@@ -23,7 +23,10 @@ Some kind if post-pcloud script?
 See if I can fix KDE Wallet (just remove the password)
 Start in Wayland
 Wallpaper
-
+Spectacle Shortcuts
+Discord audio screenshare
+Fixing VLC's SMB access
+Fixing Dolphin's crappy SMB access as well.
 Applications I'd like to have
 Virtual Keyboard, with controller support
 VLC
