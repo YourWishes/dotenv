@@ -33,7 +33,8 @@ sudo pacman -S -q --noconfirm \
   flatpak \
   neovim \
   vim \
-  fuse
+  fuse \
+  arch-wiki-docs
 
 # Desktop Programs
 echo -e "\n\n\nInstalling Pacman Desktop Programs\n\n\n"
@@ -87,9 +88,7 @@ flatpak install flathub \
     org.gnome.gitlab.YaLTeR.VideoTrimmer \
     com.orama_interactive.Pixelorama \
     com.uploadedlobster.peek \
-    org.kde.weather \
     org.mozilla.Thunderbird \
-    com.ulduzsoft.Birdtray \
     --assumeyes
 
 

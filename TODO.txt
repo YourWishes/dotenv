@@ -34,3 +34,4 @@ Elisa
 !FreeTube
 !OpenRGB
 Balena Etcher
+See if I can stop the titlebars being so pixelly at 1.5x DPI
