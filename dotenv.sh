@@ -137,8 +137,8 @@ nvim +"PlugInstall --sync" +qa
 cat ./configs/vimrc-config >> ~/.config/nvim/init.vim
 
 # Begin Plasma Configurations
-systemctl enable bluetooth
-systemctl start bluetooth
+sudo systemctl enable bluetooth
+sudo systemctl start bluetooth
 
 # Qogir
 git clone https://github.com/vinceliuice/Qogir-kde
