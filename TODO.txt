@@ -27,7 +27,6 @@ Spectacle Shortcuts
 Discord audio screenshare
 Fixing VLC's SMB access
 Fixing Dolphin's crappy SMB access as well.
-Applications I'd like to have
 Virtual Keyboard, with controller support
 VLC
 Elisa
@@ -35,3 +34,5 @@ Elisa
 !OpenRGB
 Balena Etcher
 See if I can stop the titlebars being so pixelly at 1.5x DPI
+
+Battery and Power scripts, mainly changing refresh rates for the G14

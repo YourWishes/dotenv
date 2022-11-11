@@ -42,21 +42,6 @@ sudo pacman -S -q --noconfirm \
   firefox \
   gparted \
   solaar \
-  qbittorrent \
-  vlc \
-  pinta \
-  cheese \
-  filezilla \
-  inkscape \
-  gnome-chess \
-  gnome-mines \
-  gnome-sudoku \
-  aisleriot \
-  handbrake \
-  audacity \
-  blender \
-  tiled \
-  libreoffice-fresh \
   plasma-wayland-session \
   steam \
   zip \
@@ -67,8 +52,6 @@ sudo pacman -S -q --noconfirm \
   noto-fonts-emoji \
   avahi \
   nss-mdns \
-  elisa \
-  kcalc \
   kdeconnect \
   spectacle \
   shotgun \
@@ -89,6 +72,25 @@ flatpak install flathub \
     com.orama_interactive.Pixelorama \
     com.uploadedlobster.peek \
     org.mozilla.Thunderbird \
+    com.visualstudio.code \
+    com.github.PintaProject.Pinta \
+    org.qbittorrent.qBittorrent \
+    org.videolan.VLC \
+    org.gnome.Cheese \
+    org.filezillaproject.Filezilla \
+    org.kde.elisa \
+    org.kde.knights \
+    org.kde.kmines \
+    org.kde.ksudoku \
+    org.kde.kpat \
+    fr.handbrake.ghb \
+    org.audacityteam.Audacity \
+    org.blender.Blender \
+    org.mapeditor.Tiled \
+    org.libreoffice.LibreOffice \
+    com.microsoft.Teams \
+    org.kde.kalk \
+    io.github.spacingbat3.webcord \
     --assumeyes
 
 
