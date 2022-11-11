@@ -94,14 +94,6 @@ flatpak install flathub \
     --assumeyes
 
 
-# VS Code (AUR)
-echo -e "\n\n\nInstalling VSCode\n\n\n"
-git clone https://aur.archlinux.org/visual-studio-code-bin
-cd visual-studio-code-bin
-makepkg -si --noconfirm
-cd ..
-
-
 # PIA
 echo -e "\n\n\nInstalling Private Internet Access\n\n\n"
 if ! command -v piactl &> /dev/null
