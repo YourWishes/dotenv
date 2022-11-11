@@ -71,7 +71,6 @@ flatpak install flathub \
     org.gnome.gitlab.YaLTeR.VideoTrimmer \
     com.orama_interactive.Pixelorama \
     com.uploadedlobster.peek \
-    org.mozilla.Thunderbird \
     com.visualstudio.code \
     com.github.PintaProject.Pinta \
     org.qbittorrent.qBittorrent \
