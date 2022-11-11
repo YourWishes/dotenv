@@ -93,7 +93,6 @@ flatpak install flathub \
     io.github.spacingbat3.webcord \
     --assumeyes
 
-
 # PIA
 echo -e "\n\n\nInstalling Private Internet Access\n\n\n"
 if ! command -v piactl &> /dev/null
@@ -105,6 +104,15 @@ then
   ~/Downloads/pia.run
   rm ~/Downloads/pia.run
 fi
+
+
+# VS Code (AUR)
+echo -e "\n\n\nInstalling VSCode\n\n\n"
+git clone https://aur.archlinux.org/visual-studio-code-bin
+cd visual-studio-code-bin
+makepkg -si --noconfirm
+cd ..
+
 
 
 # Node JS / NVM
