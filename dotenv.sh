@@ -71,7 +71,6 @@ flatpak install flathub \
     org.gnome.gitlab.YaLTeR.VideoTrimmer \
     com.orama_interactive.Pixelorama \
     com.uploadedlobster.peek \
-    com.visualstudio.code \
     com.github.PintaProject.Pinta \
     org.qbittorrent.qBittorrent \
     org.videolan.VLC \
@@ -179,3 +178,9 @@ sudo systemctl enable avahi-daemon
 
 # Setup screenshot hotkeys
 # shotgun - | xclip -t 'image/png' -selection clipboard
+
+# Enable plasma env vars
+mkdir -p $HOME/.config/plasma-workspace/env/
+echo "#!/bin/bash" >> $HOME/.config/plasma-workspace/env/path.sh
+echo "export MOZ_ENABLE_WAYLAND=1" >> $HOME/.config/plasma-workspace/env/path.sh
+

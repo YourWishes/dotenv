@@ -36,3 +36,10 @@ Balena Etcher
 See if I can stop the titlebars being so pixelly at 1.5x DPI
 
 Battery and Power scripts, mainly changing refresh rates for the G14
+
+
+
+
+Enable touch indicators
+Maliit
+Qogir icons and sddm
