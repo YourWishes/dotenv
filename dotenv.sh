@@ -34,7 +34,8 @@ sudo pacman -S -q --noconfirm \
   neovim \
   vim \
   fuse \
-  arch-wiki-docs
+  arch-wiki-docs \
+  ntfs-3g
 
 # Desktop Programs
 echo -e "\n\n\nInstalling Pacman Desktop Programs\n\n\n"
