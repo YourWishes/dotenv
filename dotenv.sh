@@ -35,7 +35,8 @@ sudo pacman -S -q --noconfirm \
   vim \
   fuse \
   arch-wiki-docs \
-  ntfs-3g
+  ntfs-3g \
+  p7zip
 
 # Desktop Programs
 echo -e "\n\n\nInstalling Pacman Desktop Programs\n\n\n"
