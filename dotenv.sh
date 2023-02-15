@@ -59,7 +59,8 @@ sudo pacman -S -q --noconfirm \
   shotgun \
   xclip \
   cups \
-  print-manager
+  print-manager \
+  libpaper
 
 
 # Install programs using flatpak
@@ -90,7 +91,6 @@ flatpak install flathub \
     org.libreoffice.LibreOffice \
     com.microsoft.Teams \
     org.kde.kalk \
-    io.github.spacingbat3.webcord \
     --assumeyes
 
 # PIA
