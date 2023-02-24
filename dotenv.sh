@@ -89,7 +89,6 @@ flatpak install flathub \
     org.blender.Blender \
     org.mapeditor.Tiled \
     org.libreoffice.LibreOffice \
-    com.microsoft.Teams \
     org.kde.kalk \
     --assumeyes
 
