@@ -60,7 +60,9 @@ sudo pacman -S -q --noconfirm \
   xclip \
   cups \
   print-manager \
-  libpaper
+  libpaper \
+  ghostscript \
+  sddm
 
 
 # Install programs using flatpak
@@ -90,6 +92,7 @@ flatpak install flathub \
     org.mapeditor.Tiled \
     org.libreoffice.LibreOffice \
     org.kde.kalk \
+    com.nextcloud.desktopclient.nextcloud \
     --assumeyes
 
 # PIA
@@ -104,13 +107,10 @@ then
   rm ~/Downloads/pia.run
 fi
 
-
-# VS Code (AUR)
-echo -e "\n\n\nInstalling VSCode\n\n\n"
-git clone https://aur.archlinux.org/visual-studio-code-bin
-cd visual-studio-code-bin
-makepkg -si --noconfirm
-cd ..
+# YAY (AUR)
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
 
 
 
@@ -175,8 +175,6 @@ sudo systemctl stop avahi-daemon
 sudo systemctl start avahi-daemon
 sudo systemctl enable avahi-daemon
 
-# Microsoft TTF fonts
-
 # Setup screenshot hotkeys
 # shotgun - | xclip -t 'image/png' -selection clipboard
 
@@ -185,3 +183,5 @@ mkdir -p $HOME/.config/plasma-workspace/env/
 echo "#!/bin/bash" >> $HOME/.config/plasma-workspace/env/path.sh
 echo "export MOZ_ENABLE_WAYLAND=1" >> $HOME/.config/plasma-workspace/env/path.sh
 
+# AUR Packages
+yay -S --nodiffmenu visual-studio-code-bin ttf-ms-win10-auto
