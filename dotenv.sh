@@ -202,3 +202,7 @@ echo "export MOZ_ENABLE_WAYLAND=1" >> $HOME/.config/plasma-workspace/env/path.sh
 
 # AUR Packages
 yay -S --nodiffmenu visual-studio-code-bin ttf-ms-win10-auto
+
+# Setup VSCode to launch under wayland
+echo '--enable-features=WaylandWindowDecorations' >> ~/.config/code-flags.conf
+echo '--ozone-platform-hint=auto' >> ~/.config/code-flags.conf
