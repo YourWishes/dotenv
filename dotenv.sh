@@ -93,6 +93,20 @@ flatpak install flathub \
     org.libreoffice.LibreOffice \
     org.kde.kalk \
     com.nextcloud.desktopclient.nextcloud \
+    org.kde.kdenlive \
+    com.github.tchx84.Flatseal \
+    io.dbeaver.DBeaverCommunity \
+    io.github.mightycreak.Diffuse \
+    com.unity.UnityHub \
+    com.github.k4zmu2a.spacecadetpinball \
+    org.prismlauncher.PrismLauncher \
+    net.openra.OpenRA \
+    net.rpcs3.RPCS3 \
+    org.yuzu_emu.yuzu \
+    org.kde.ksudoku \
+    org.kde.krita \
+    org.inkscape.Inkscape \
+    org.kde.gwenview \
     --assumeyes
 
 # PIA
@@ -174,6 +188,9 @@ sudo sed -i 's/hosts\: mymachines resolve/hosts: mymachines resolve mdns_minimal
 sudo systemctl stop avahi-daemon
 sudo systemctl start avahi-daemon
 sudo systemctl enable avahi-daemon
+
+# Printer
+sudo systemctl enable --now cups
 
 # Setup screenshot hotkeys
 # shotgun - | xclip -t 'image/png' -selection clipboard
