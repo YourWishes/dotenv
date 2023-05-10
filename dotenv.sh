@@ -36,7 +36,9 @@ sudo pacman -S -q --noconfirm \
   fuse \
   arch-wiki-docs \
   ntfs-3g \
-  p7zip
+  p7zip \
+  docker \
+  docker-compose
 
 # Desktop Programs
 echo -e "\n\n\nInstalling Pacman Desktop Programs\n\n\n"
