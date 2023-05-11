@@ -64,7 +64,8 @@ sudo pacman -S -q --noconfirm \
   print-manager \
   libpaper \
   ghostscript \
-  sddm
+  sddm \
+  gnome-keyring
 
 
 # Install programs using flatpak
@@ -156,6 +157,7 @@ cat ./configs/vimrc-config >> ~/.config/nvim/init.vim
 # Begin Plasma Configurations
 sudo systemctl enable bluetooth
 sudo systemctl start bluetooth
+sudo systemctl enable --now docker
 
 # Qogir
 git clone https://github.com/vinceliuice/Qogir-kde
