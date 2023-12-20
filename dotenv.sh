@@ -30,6 +30,7 @@ sudo pacman -S -q --noconfirm \
   cmake \
   curl \
   wget \
+  xdg-desktop-portal-kde \
   flatpak \
   neovim \
   vim \
@@ -43,11 +44,9 @@ sudo pacman -S -q --noconfirm \
 # Desktop Programs
 echo -e "\n\n\nInstalling Pacman Desktop Programs\n\n\n"
 sudo pacman -S -q --noconfirm \
-  firefox \
   gparted \
   solaar \
   plasma-wayland-session \
-  steam \
   zip \
   ttc-iosevka \
   bluedevil \
@@ -67,10 +66,12 @@ sudo pacman -S -q --noconfirm \
   sddm \
   gnome-keyring
 
-
 # Install programs using flatpak
 echo -e "\n\n\nInstalling FlatPak Desktop Programs\n\n\n"
-flatpak install flathub \
+flatpak install \
+    flathub \
+    org.mozilla.firefox \
+    com.valvesoftware.Steam \
     com.bitwarden.desktop \
     com.obsproject.Studio \
     com.discordapp.Discord \
@@ -129,8 +130,6 @@ git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
 
-
-
 # Node JS / NVM
 echo -e "\n\n\nNodeJS\n\n\n"
 if ! command -v nvm &> /dev/null
@@ -143,7 +142,6 @@ fi
 
 nvm install --lts
 npm i -g yarn
-
 
 # VIM
 echo -e "\n\n\nVIM\n\n\n"
@@ -196,9 +194,6 @@ sudo systemctl enable avahi-daemon
 # Printer
 sudo systemctl enable --now cups
 
-# Setup screenshot hotkeys
-# shotgun - | xclip -t 'image/png' -selection clipboard
-
 # Enable plasma env vars
 mkdir -p $HOME/.config/plasma-workspace/env/
 echo "#!/bin/bash" >> $HOME/.config/plasma-workspace/env/path.sh
@@ -210,3 +205,13 @@ yay -S --nodiffmenu visual-studio-code-bin ttf-ms-win10-auto
 # Setup VSCode to launch under wayland
 echo '--enable-features=WaylandWindowDecorations' >> ~/.config/code-flags.conf
 echo '--ozone-platform-hint=auto' >> ~/.config/code-flags.conf
+
+# Enable NetworkManager (Not sure why this isn't being enabled by default?)
+if grep -q 'wifi.backend' "/etc/NetworkManager/NetworkManager.conf"; then
+  echo 'Wi-Fi Backend already setup.'
+else
+  echo "[device]" | sudo tee -a /etc/NetworkManager/NetworkManager.conf
+  echo "wifi.backend=iwd" | sudo tee -a /etc/NetworkManager/NetworkManager.conf
+fi
+sudo systemctl enable --now NetworkManager.service
+sudo systemctl restart NetworkManager.service
