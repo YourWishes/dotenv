@@ -207,11 +207,11 @@ echo '--enable-features=WaylandWindowDecorations' >> ~/.config/code-flags.conf
 echo '--ozone-platform-hint=auto' >> ~/.config/code-flags.conf
 
 # Enable NetworkManager (Not sure why this isn't being enabled by default?)
-if grep -q 'wifi.backend' "/etc/NetworkManager/NetworkManager.conf"; then
-  echo 'Wi-Fi Backend already setup.'
-else
-  echo "[device]" | sudo tee -a /etc/NetworkManager/NetworkManager.conf
-  echo "wifi.backend=iwd" | sudo tee -a /etc/NetworkManager/NetworkManager.conf
-fi
-sudo systemctl enable --now NetworkManager.service
-sudo systemctl restart NetworkManager.service
+#if grep -q 'wifi.backend' "/etc/NetworkManager/NetworkManager.conf"; then
+#  echo 'Wi-Fi Backend already setup.'
+#else
+#  echo "[device]" | sudo tee -a /etc/NetworkManager/NetworkManager.conf
+#  echo "wifi.backend=iwd" | sudo tee -a /etc/NetworkManager/NetworkManager.conf
+#fi
+#sudo systemctl enable --now NetworkManager.service
+#sudo systemctl restart NetworkManager.service
