@@ -74,11 +74,11 @@ flatpak install \
     com.valvesoftware.Steam \
     com.bitwarden.desktop \
     com.obsproject.Studio \
-    com.discordapp.Discord \
+    dev.vencord.Vesktop \
+    app.organicmaps.desktop \
     org.libretro.RetroArch \
     org.gnome.NetworkDisplays \
     org.gnome.gitlab.YaLTeR.VideoTrimmer \
-    com.orama_interactive.Pixelorama \
     com.uploadedlobster.peek \
     com.github.PintaProject.Pinta \
     org.qbittorrent.qBittorrent \
@@ -107,10 +107,15 @@ flatpak install \
     net.openra.OpenRA \
     net.rpcs3.RPCS3 \
     org.yuzu_emu.yuzu \
+    info.cemu.Cemu \
     org.kde.ksudoku \
     org.kde.krita \
     org.inkscape.Inkscape \
     org.kde.gwenview \
+    com.google.Chrome \
+    org.godotengine.Godot \
+    dev.goats.xivlauncher \
+    re.chiaki.Chiaki \
     --assumeyes
 
 # PIA
@@ -200,18 +205,17 @@ echo "#!/bin/bash" >> $HOME/.config/plasma-workspace/env/path.sh
 echo "export MOZ_ENABLE_WAYLAND=1" >> $HOME/.config/plasma-workspace/env/path.sh
 
 # AUR Packages
-yay -S --nodiffmenu visual-studio-code-bin ttf-ms-win10-auto
+yay -S --nodiffmenu \
+  visual-studio-code-bin \
+  git-credential-manager-core-extras
 
 # Setup VSCode to launch under wayland
 echo '--enable-features=WaylandWindowDecorations' >> ~/.config/code-flags.conf
 echo '--ozone-platform-hint=auto' >> ~/.config/code-flags.conf
 
-# Enable NetworkManager (Not sure why this isn't being enabled by default?)
-#if grep -q 'wifi.backend' "/etc/NetworkManager/NetworkManager.conf"; then
-#  echo 'Wi-Fi Backend already setup.'
-#else
-#  echo "[device]" | sudo tee -a /etc/NetworkManager/NetworkManager.conf
-#  echo "wifi.backend=iwd" | sudo tee -a /etc/NetworkManager/NetworkManager.conf
-#fi
-#sudo systemctl enable --now NetworkManager.service
-#sudo systemctl restart NetworkManager.service
+# Shopify stuff
+curl -sSL https://get.rvm.io | bash
+source $HOME/.rvm/scripts/rvm
+rvm install 3.3
+rvm use 3.3 --default
+npm install -g @shopify/cli @shopify/theme
