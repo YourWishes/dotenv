@@ -45,8 +45,6 @@ sudo pacman -S -q --noconfirm \
 echo -e "\n\n\nInstalling Pacman Desktop Programs\n\n\n"
 sudo pacman -S -q --noconfirm \
   gparted \
-  solaar \
-  plasma-wayland-session \
   zip \
   ttc-iosevka \
   bluedevil \
@@ -82,7 +80,6 @@ flatpak install \
     com.uploadedlobster.peek \
     com.github.PintaProject.Pinta \
     org.qbittorrent.qBittorrent \
-    org.videolan.VLC \
     org.gnome.Cheese \
     org.filezillaproject.Filezilla \
     org.kde.elisa \
@@ -104,25 +101,25 @@ flatpak install \
     com.unity.UnityHub \
     com.github.k4zmu2a.spacecadetpinball \
     org.prismlauncher.PrismLauncher \
-    net.openra.OpenRA \
     net.rpcs3.RPCS3 \
     org.yuzu_emu.yuzu \
     info.cemu.Cemu \
+    io.github.lime3ds.Lime3DS \
     org.kde.ksudoku \
     org.kde.krita \
-    org.inkscape.Inkscape \
     org.kde.gwenview \
     com.google.Chrome \
     org.godotengine.Godot \
     dev.goats.xivlauncher \
     re.chiaki.Chiaki \
+    org.mozilla.Thunderbird \
     --assumeyes
 
 # PIA
 echo -e "\n\n\nInstalling Private Internet Access\n\n\n"
 if ! command -v piactl &> /dev/null
 then
-  wget https://installers.privateinternetaccess.com/download/pia-linux-3.3.1-06924.run -O ~/Downloads/pia.run
+  wget https://installers.privateinternetaccess.com/download/pia-linux-3.5.7-08120.run -O ~/Downloads/pia.run
   chmod +x ~/Downloads/pia.run
   mkdir -p ~/.config/privateinternetaccess
   cp ./configs/pia-settings.json ~/.config/privateinternetaccess/clientsettings.json
@@ -162,29 +159,8 @@ sudo systemctl enable bluetooth
 sudo systemctl start bluetooth
 sudo systemctl enable --now docker
 
-# Qogir
-git clone https://github.com/vinceliuice/Qogir-kde
-cd Qogir-kde
-chmod +x ./install.sh
-./install.sh
-cd ..
-
 # Fix Dark Mode
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
-
-# Simp1e Cursors
-git clone --recurse-submodules https://gitlab.com/zoli111/simp1e.git
-cd simp1e
-
-sudo pacman -S -q --noconfirm \
-  librsvg \
-  python-pillow \
-  xorg-xcursorgen
-
-./build.sh
-mkdir ~/.icons
-mv ./built_themes/* ~/.icons
-cd ..
 
 # Git Config
 git config --global user.name Dominic Masters
@@ -210,8 +186,8 @@ yay -S --nodiffmenu \
   git-credential-manager-core-extras
 
 # Setup VSCode to launch under wayland
-echo '--enable-features=WaylandWindowDecorations' >> ~/.config/code-flags.conf
-echo '--ozone-platform-hint=auto' >> ~/.config/code-flags.conf
+#echo '--enable-features=WaylandWindowDecorations' >> ~/.config/code-flags.conf
+#echo '--ozone-platform-hint=auto' >> ~/.config/code-flags.conf
 
 # Shopify stuff
 curl -sSL https://get.rvm.io | bash
