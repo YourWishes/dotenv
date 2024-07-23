@@ -104,6 +104,7 @@ flatpak install \
     net.rpcs3.RPCS3 \
     org.yuzu_emu.yuzu \
     info.cemu.Cemu \
+    org.DolphinEmu.dolphin-emu \
     io.github.lime3ds.Lime3DS \
     org.kde.ksudoku \
     org.kde.krita \
