@@ -82,7 +82,7 @@ flatpak install \
     org.qbittorrent.qBittorrent \
     org.gnome.Cheese \
     org.filezillaproject.Filezilla \
-    org.kde.elisa \
+    com.github.taiko2k.tauonmb \
     org.kde.knights \
     org.kde.kmines \
     org.kde.ksudoku \
