@@ -39,7 +39,9 @@ sudo pacman -S -q --noconfirm \
   ntfs-3g \
   p7zip \
   docker \
-  docker-compose
+  docker-compose \
+  exfatprogs \
+  dosfstools
 
 # Desktop Programs
 echo -e "\n\n\nInstalling Pacman Desktop Programs\n\n\n"
@@ -69,14 +71,15 @@ echo -e "\n\n\nInstalling FlatPak Desktop Programs\n\n\n"
 flatpak install \
     flathub \
     org.mozilla.firefox \
+    com.usebottles.bottles \
     com.valvesoftware.Steam \
     com.bitwarden.desktop \
     com.obsproject.Studio \
     dev.vencord.Vesktop \
-    app.organicmaps.desktop \
     org.libretro.RetroArch \
-    org.gnome.NetworkDisplays \
-    org.gnome.gitlab.YaLTeR.VideoTrimmer \
+    # org.gnome.NetworkDisplays \
+    # app.organicmaps.desktop \
+    # org.gnome.gitlab.YaLTeR.VideoTrimmer \
     com.uploadedlobster.peek \
     com.github.PintaProject.Pinta \
     org.qbittorrent.qBittorrent \
